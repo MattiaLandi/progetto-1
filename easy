@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+#define A 20
+#define B 10
+
+int main()
+{
+    int val;
+    srand(time(0));
+ for(int i=0;i<B;i++)
+ {
+ val=rand()%A+i;
+ cout<<"stampanumero"<<val<<endl;
+ if(val%2==0 && val>=12 && val<=17)
+ cont++;
+
+
+ }
+    
+
+    return 0;
+}
