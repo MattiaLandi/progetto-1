@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+
+
+int main()
+{
+int a=2;
+while(a!=0)
+{
+    cout<<"inseriscinumero"<<endl;
+    cin>>a;
+cout<<"stampanumero"<<endl;
+}
+
+    return 0;
+}
