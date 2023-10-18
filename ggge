@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+#define A 10
+
+int main()
+{
+    int val=0;
+    
+ for(int i=0;i<A;i++){
+  val=i;
+    cout<<"stampa numero:"<<val<<endl;
+    cout<<"numero pari"<<endl;
+   
+   
+}
+
+for(int i=1;i<A;i+=2){
+val=i;   
+cout<<"numero pari"<<val<<endl;
+
+
+
+}
+}
