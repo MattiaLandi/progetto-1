@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+     int numprodotti;
+    float prezzo;
+    int prezzofinale;
+    cout<<"quanti prodotti hai acquistato?"<<endl;
+    cin>>numprodotti;
+    cout<<"quanto costa il prodotto?"<<endl;
+    cin>>prezzo;
+   prezzo=prezzo*numprodotti;
+        cout<<"il prezzo è:"<<prezzo<<endl;
+        
+        
+            prezzo=prezzo/100;
+            prezzo=prezzo*66.67;
+            prezzofinale=prezzo;
+            cout<<"il prezzo finale è:"<<prezzofinale<<endl;
+}
+
+
