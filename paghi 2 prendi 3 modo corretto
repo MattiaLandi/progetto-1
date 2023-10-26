@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int importo;
+    float prezzo;
+    int quantitaprodotti;
+    cout<<"Quantita prodotti acquistati:"<<endl;
+    cin>>quantitaprodotti;
+    cout<<"Prezzo singolo prodotto:"<<endl;
+    cin>>prezzo;
+    if(quantitaprodotti<3){
+        importo=prezzo*quantitaprodotti;
+        cout<<"Importo totale:"<<importo<<endl;
+    }
+    else{
+        prezzo=prezzo*quantitaprodotti;
+        prezzo=prezzo/100;
+        prezzo=prezzo*66.67;
+        importo=prezzo;
+        cout<<"importo finale è:"<<importo<<endl;
+    }
+}
