@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int somma(int x,int y, int z){
+    int somma;
+    somma = x+y+z;
+    return somma;
+}
+int main() {
+    int a;
+    int b;
+    int c;
+    int risultato;
+    cout<<"inserisci a "<<endl;
+    cin>>a;
+    cout<<"inserisci b"<<endl;
+    cin>>b;
+    cout<<"inserisci c"<<endl;
+    cin>>c;
+    risultato=somma(a,b,c);
+    cout<<risultato<<endl;
+    return 0;
+}
+     
+
+
+
+
+    
+     
+     
