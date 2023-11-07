@@ -1,0 +1,45 @@
+
+      cout << "Inserisci il primo numero: ";
+      cin >> m;
+      cout << "Inserisci il secondo numero: ";
+      cin >> l;
+      switch (c)
+	{
+	case '+':
+	g=somma(m,l);
+	  cout << "La somma tra " << m << " e " << l << " e`: " << m + l << endl;
+	  break;
+	case '*':
+	g=prodotto(m,l);
+	  cout << "Il prodotto tra " << m << " e " << l << " e`: " << m * l << endl;
+	  break;
+	case '-':
+	g=differenza(m,l);
+	  cout << "La differenza tra " << m << " e " << l << " e`: " << m - l << endl;
+	  break;
+	  case"/":
+	  g=divisione(m,l);
+	  cout<<"la diviosne tra"< <m <<" e "<<l<<"è:"<<m/l<<endl;
+	default:
+	  cout << "numero non valido" << endl;
+	  break;
+	  if (num % 2 == 0) {
+    // Il numero è pari
+    cout<< "Il numero è pari"<<endl;
+    cin>> m;
+} else {
+    // Il numero è dispari
+    cout<< "Il numero è dispari"<<endl;
+    cin>> l;
+}
+      cout << "y=yes, n=no" << endl;
+      cin >> a;
+	}
+      cout << "Vuoi continuare?" << endl;
+      
+    }
+  while (!(a == 'n' || a == 'N'));	// Esco dal programma quando premo 'n' o 'N'.
+
+  
+  return 0;
+}
