@@ -1,0 +1,67 @@
+#include <iostream>
+
+using namespace std;
+
+/*
+Programma che simula una calcolatrice ridotta e cicla finche' l'utente non preme i caratteri 'n' o 'N'.
+
+*/
+float somma(float x,float y){
+float somma;
+somma=x+y;
+return somma;
+}
+float differenza(float x, float y){
+float differenza;
+differenza=x-y;
+return differenza;}
+
+float prodotto(float x,float y){
+float prodotto;
+prodotto=x*y;
+return prodotto;}
+float div(float x,float y){
+float div;
+div=x/y;
+return div;}
+
+int main ()
+{
+  int m, l;
+  char c;
+  char a;
+
+  do
+    {
+      cout << "Inserisci l'operazione da svolgere: " << endl;
+      /* Menu` del mio programma */
+      cout << "+ -> Addizione" << endl;
+      cout << "* -> Moltiplicazione" << endl;
+      cout << "- -> Sottrazione" << endl;
+      cin >> c;
+      cout << "Inserisci il primo numero: ";
+      cin >> m;
+      cout << "Inserisci il secondo numero: ";
+      cin >> l;
+      switch (c)
+	{
+	case '+':
+	  cout << "La somma tra " << m << " e " << l << " e`: " << m + l << endl;
+	  break;
+	case '*':
+	  cout << "Il prodotto tra " << m << " e " << l << " e`: " << m * l << endl;
+	  break;
+	case '-':
+	  cout << "La differenza tra " << m << " e " << l << " e`: " << m - l << endl;
+	  break;
+	default:
+	  cout << "numero non valido" << endl;
+	  break;
+	}
+      cout << "Vuoi continuare?" << endl;
+      cout << "y=yes, n=no" << endl;
+      cin >> a;
+    }
+  while (!(a == 'n' || a == 'N'));	// Esco dal programma quando premo 'n' o 'N'.
+  return 0;
+}
