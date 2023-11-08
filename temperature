@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+
+    float K(float x);
+    float K(float x)
+    {
+        float k;
+        k=x * 273.15;
+        return k;
+    }
+    
+    
+    float f(float x);
+    float f(float x)
+    {
+        float f;
+        f=(x*9/5)+32;
+        return f;
+    }
+    
+    
+    
+    int main()
+    {
+        float tempo=0;
+        float cal2;
+        float cal;
+        cout<<"dimmi la temperatura in gradi"<<endl;
+        cin>>tempo;
+        cal=K(tempo);
+        cal2=f(tempo);
+        cout<<"dimmi la temperatura in gradi f"<<cal<<endl;
+        cout<<"dimmi la temperatura in gradi k"<<cal2<<endl;
+        return 0;
+    }
