@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+float area (float x, float y){
+return (x*x*3.14);}
+float circonferenza(float x, float y){
+return (x*2*y);}
+
+
+int main()
+{
+    float raggio;
+    float ris;
+    float ris2;
+    cout<<"quale è il raggio del cerchio:"<<endl;
+    cin>>raggio;
+    ris=area(raggio, y);
+    cout<<"quale è l'area del cerchio:"<<endl;
+    cin>>area;
+    ris2=circonferenza(raggio, y);
+    cout<<"quale la circonferenza del cerchio:"<<endl;
+    return 0;
+    }
+
+
+
