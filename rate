@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+float costofinale(float x, float y, float z){
+    return(x+y*z);
+}
+
+int main()
+{
+    float Rmens;
+    float Qfiss;
+    float mese;
+    float ris;
+    
+    cout<<"inserisci quota fissata:"<<endl;
+    cin>>Qfiss;
+    cout<<"inserisci rata mensile:"<<endl;
+    cin>>Rmens;
+    cout<<"inserisci n mesi:"<<endl;
+    cin>>mese;
+  ris=costofinale(Qfiss,Rmens,mese);
+   cout<<"limporto finale è:"<<ris<<endl;
+   return 0;
+}
