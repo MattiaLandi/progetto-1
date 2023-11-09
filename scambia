@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+void scambia (float a, float b);
+int main ()
+{
+  float a = 5, b = 3.14, x;
+
+  cout << "Prima dello scambio" << endl;
+  cout << "a: " << a << endl;
+  cout << "b: " << b << endl;
+  x = a;
+  a = b;
+  b = x;
+  scambia (a, b);
+
+  cout << "Dopo dello scambio" << endl;
+  cout << "a: " << a << endl;
+  cout << "b: " << b << endl;
+  return 0;
+}
+
+void
+scambia (float a, float b)
+{
+  float x = a;
+  a = b;
+  b = x;
+}
+
