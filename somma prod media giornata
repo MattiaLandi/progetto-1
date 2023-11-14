@@ -1,0 +1,46 @@
+#include <iostream>
+ #include <cstdlib>
+ using namespace std;
+ 
+ float somma(float x, float y){
+     float somma;
+     somma=x+y;
+     return somma;
+ }
+ float prodotto( float x, float y){
+ float prodotto;
+ prodotto=x*y;
+ return prodotto;
+ }
+ float media(float x, float y){
+ float media;
+ media=x/2;
+ return media;
+ }
+
+ int main() {
+     float x,y;
+     float num;
+     float somma;
+     float prodotto;
+     float media;
+     float ris;
+     float ris1;
+     float ris2;
+     srand((unsigned)time(NULL));
+     for(int i=0;i<10;i++){
+     num=(rand()%71)+13;
+     cout<<num<<endl;}
+     ris=float somma(float x, float y);
+     ris1=float prodotto(float x, float y);
+     ris2=float media(float x, float y);
+     cout<<"la somma è:"<<somma<<endl;
+     cout<<"il prodotto è:"<<prodotto<<endl;
+     cout<<"la media è:"<<media<<endl;
+     }
+     
+     
+     
+
+ 
+    
