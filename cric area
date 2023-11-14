@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+
+void calcolacircarea(float& circ, float& area, float& diam){
+circ=diam*3.14;
+area=3.14*(diam/2*diam/2);
+}
+int main()
+{
+    float area;
+    float diam;
+    float circ;
+    cout<<"inserisci diametro:"<<endl;
+    cin>>diam;
+    calcolacircarea(area, circ, diam);
+    cout<<"valore circonferenza:"<<circ<<endl;
+    cout<<"valore area:"<<area<<endl;
+    
+
+    
+}
