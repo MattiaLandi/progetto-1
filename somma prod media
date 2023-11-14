@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+
+    
+
+    
+    
+    
+
+
+
+
+
+
+
+int main() {
+    int i=1;
+    int num;
+    int somma;
+    int prodotto;
+    int media;
+    srand((unsigned)time(NULL));
+    for(int i;i<10;i++){
+    num=(rand()%71+13)+13;
+   
+}
+}   
