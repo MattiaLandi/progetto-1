@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+
+    int n=0;
+    int divisore=0;
+    int contatore=0;
+    int d=0;
+    int c=0;
+    int Contatore=0;
+    
+    cout<<"inserisci numero"<<endl;
+        cin>>n;
+    
+        for(int i=1;i<=n;i++){
+        if(n%i==0)
+             contatore++;
+        }
+        d=contatore;
+         
+        
+        
+
+    cout<<"il numero dei divisori di n è: "<<d<<endl;
+        
+    for(int i=1;i<=d;i++){
+        if(d%i==0)
+             Contatore++;
+        }
+        c=Contatore;
+
+        cout<<"il numero dei divisori di d è: "<<c<<endl;
+         
+
+}
