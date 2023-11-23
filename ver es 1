@@ -1,0 +1,70 @@
+*******************************************************************************/
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+
+using namespace std;
+
+/*int PoD(bool x, bool y){
+if(x%2==0){
+    cout<<"la somma è pari:"<<endl;
+}
+else{
+    cout<<"la somma è dispari:"<<endl;
+}
+return y;
+}
+
+int PoD2(bool x, bool y){
+    if(x%2==0){
+        cout<<"il prodotto è pari:"<<endl;
+    }
+    else{
+        cout<<"il prodotto è dispari:"<endl;
+    }
+    }
+    
+*/
+
+
+
+
+int main (){
+    int N;
+    float somma;
+    float prodotto;
+    float media;
+    
+    
+
+srand(time(NULL));
+cout<<"quantita numeri:"<<endl;
+cin>>N;
+for(int i=0;i<N;i++){
+    int numerorandom=rand()%32-10;
+    somma=somma+numerorandom;
+    prodotto=prodotto*numerorandom;
+    cout<<numerorandom<<endl;
+    
+}
+cout<<"somma:"<<somma<<endl;
+cout<<"prodotto:"<<prodotto<<endl;
+cout<<"media:"<<somma/N<<endl;
+
+if(somma %2 == 0){
+    cout<<"la somma è pari:"<<endl;
+}
+else{
+    cout<<"la somma è dispari:"<<endl;
+}
+
+    if(prodotto %2 == 0){
+        cout<<"il prodotto è pari:"<<endl;
+    }
+    else{
+        cout<<"il prodotto è dispari:"<endl;
+    }
+
+return 0;
+
+}
