@@ -28,5 +28,7 @@ int main(){
     cout<<"la somma è:"<<somma<<endl<<"il prod è:"<<prodotto<<endl<<"la media è:"<<media<<endl;
 }
 
+caimmi me  l'ha copiato
+
  
     
