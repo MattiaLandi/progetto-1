@@ -42,4 +42,4 @@ int main() {
     cout << "Prodotto della diagonale principale: " << prodottoDiagonale << endl;
 
     return 0;
-}
+
