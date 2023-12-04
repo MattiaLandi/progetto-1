@@ -38,7 +38,7 @@ int main() {
     cin >> libro3.costo;
 
     
-    float costoMedio = (libro1.costo + libro2.costo + libro3.costo) / 3.0;
+    float costoMedio = (libro1.costo + libro2.costo + libro3.costo) / 3;
 
    
     cout << "Il costo medio dei libri è: " << costoMedio << " euro" << endl;
