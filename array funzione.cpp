@@ -29,7 +29,7 @@ int Max(int array[], int lunghezza) {
 }
 
 int main() {
-    const int lunghezzaArray = 10;
+    int lunghezzaArray = 10;
     int arrayNumeri[lunghezzaArray];
     
     srand(time(NULL));
