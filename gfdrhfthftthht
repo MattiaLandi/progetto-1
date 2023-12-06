@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+#define N 4
+
+struct LivLing {
+    string livling;
+};
+
+struct Classe {
+    string classe;  
+};
+
+
+struct Studente {
+    int codStudente;
+    Classe classe;
+    LivLing livling;
+};
+int main()
+{
+   Studente studenti[N];
+   for(int i=0;i<N;i++){
+   cout<<"livello linguistico:";
+   cin>>studenti[i].livling;
+   
+}
+}
