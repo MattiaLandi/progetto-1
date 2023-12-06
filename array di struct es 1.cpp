@@ -11,9 +11,9 @@ struct orario {
 int main() { 
     srand(time(0)); 
     orario lettura_orario[N]; 
-    int maxo;//massimo ore 
-    int maxm;//massimo min 
-    int maxs;//massimo sec 
+    int maxo;
+    int maxm;
+    int maxs; 
     
     for(int i = 0; i<N;i++) { 
         lettura_orario[i].ora=rand()%24;
