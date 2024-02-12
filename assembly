@@ -1,0 +1,56 @@
+section .data
+    msg db 'Inserisci due numeri (0-9): ', 0
+    len equ $-msg
+
+section .bss
+    nums resb 2
+    result resb 1
+
+section .text
+    global _start
+
+_start:
+  
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, msg
+    mov edx, len
+    int 80h
+
+  
+    mov eax, 3
+    mov ebx, 0
+    mov ecx, nums
+    mov edx, 2
+    int 80h
+
+    
+    sub byte [nums], '0'
+    sub byte [nums+1], '0'
+
+    
+    add al, [nums]
+    add al, [nums+1]
+
+   
+    cmp al, 9
+    jle skip_subtraction
+    sub al, 10
+
+
+   
+    add al, '0'
+
+    mov [result], al
+
+ 
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, result
+    mov edx, 1
+    int 80h
+
+   
+    mov eax, 1
+    xor ebx, ebx
+    int 80h
