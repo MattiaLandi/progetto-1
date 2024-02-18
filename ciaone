@@ -1,0 +1,23 @@
+selezione_data
+    array  db  1, 2, 3, 4, 5      ; Definizione del vettore
+    array_len equ $ - array         ; Lunghezza del vettore
+    sum     dd  0                   ; Variabile per memorizzare la somma, inizializzata a 0
+
+selezione_testo
+    inizio_globale
+
+inizio:
+    mov ecx, 0                      ; Inizializzazione dell'indice del vettore
+    mov eax, 0                      ; Inizializzazione della somma
+
+calcoloSomma:
+    cmp ecx, array_len          
+    jge calcoloFinale           
+    add eax, [array + ecx]        
+    inc ecx                     
+    jmp calculate_sum               
+
+calcoloFinale:
+    mov ebx, eax                    ; Metti il risultato in ebx
+    mov eax, 1                      ; Codice di uscita del programma
+    int 0x80                        ; Chiamata al kernel per uscire dal programma
