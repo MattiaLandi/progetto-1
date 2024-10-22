@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+    struct nodo {
+        int n;
+        nodo *prossimo;
+    };
+    void stampa_lista(nodo *p){
+    nodo *qa;
+    qa=p;
+    while( qa != NULL){
+        cout<<"nodo: n, prossimo: "<<qa->n <<" , "<<qa<<endl;
+        qa=qa->prossimo;
+    }
+    }
+int main(){
+    nodo *p;
+    p=NULL;
+    cout<<"lista vuota p, indirizzo"<<p<<","<<&p<<endl;
+    cout<<"inserisci 4 valori interi interi: "<<endl;
+    nodo *q;
+    int n;
+    for(int i=0;(i<4); i++){
+        q=new nodo;
+        cin>>n;
+        q->n=n;
+        q->prossimo=p;
+        p=q;
+    }
+    
+    }
