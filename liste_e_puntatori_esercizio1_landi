@@ -2,20 +2,12 @@
 using namespace std;
 
 int main() {
-   
-    int var = 10;
-
-    
+    int var = 10;    
     cout << "Valore originale della variabile: " << var <<endl;
     cout << "Indirizzo di memoria della variabile: " << &var <<endl;
 
-    
     int* p = &var;
-    
-    *p = 20;
-
-
-    cout << "Nuovo valore: " << var <<endl;
-
-    return 0;
+     *p = 20;
+ cout << "Nuovo valore: " << var <<endl;
+ return 0;
 }
