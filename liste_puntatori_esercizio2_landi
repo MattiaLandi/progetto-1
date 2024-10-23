@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+struct Nodo{
+    int val;
+   
+    Nodo* successivo;  
+   
+   
+};
+
+int main(){
+   
+    Nodo* nodo1=new Nodo;
+    Nodo* nodo2=new Nodo;
+    Nodo* nodo3=new Nodo;
+
+    nodo1->val=5;
+    nodo2->val=10;
+    nodo3->val=15;
+
+    nodo1->successivo=nodo2;
+    nodo2->successivo=nodo3;
+    nodo3->successivo=NULL;
+
+    Nodo* corrente=nodo1;
+    while(corrente!=NULL){
+        cout<<corrente->val<< " ";
+        corrente=corrente->successivo;
+    }
+   
+    return 0;
+}
+
