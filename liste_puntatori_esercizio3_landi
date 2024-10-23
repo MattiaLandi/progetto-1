@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+
+struct Nodo {
+    int valore;
+    Nodo* prossimo;
+};
+
+
+Nodo* inserisciInTesta(Nodo* testa, int valore) {
+    Nodo* nuovoNodo = new Nodo();  
+    nuovoNodo->valore = valore; 
+    nuovoNodo->prossimo = testa;    
+    return nuovoNodo;               
+}
+
+
+void stampaLista(Nodo* testa) {
+    Nodo* corrente = testa;
+    while (corrente != NULL) {
+        cout << corrente->valore << " ";
+        corrente = corrente->prossimo;
+    }
+    cout << endl;
+}
+
+
+int main() {
+    Nodo* testa = NULL;  
+
+    int valore;
+    char continua;
+
+    
+        cout << "Inserisci un valore intero da aggiungere in testa: ";
+        cin >> valore;
+       
+        
+        testa = inserisciInTesta(testa, valore);
+       
+       
+        cout << "Lista aggiornata: ";
+        stampaLista(testa);
+       
+        cout << "Vuoi inserire un altro valore? (s/n): ";
+        cin >> continua;
+
+    } while (continua == 's' || continua == 'S');
+
+   
+    Nodo* corrente = testa;
+    while (corrente != NULL) {
+        Nodo* daEliminare = corrente;
+        corrente = corrente->prossimo;
+        delete daEliminare;
+    }
+
+    return 0;
+}
