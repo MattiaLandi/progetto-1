@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+struct Nodo {
+    int valore;
+    Nodo* successivo;
+};
+
+class ListaCollegata {
+public:
+    Nodo* testa;
+
+    ListaCollegata() : testa(NULL) {}
+
+    void inserisciInCoda(int valore) {
+        Nodo* nuovoNodo = new Nodo();
+        nuovoNodo->valore = valore;
+        nuovoNodo->successivo = NULL;
+
+        if (!testa) {
+            testa = nuovoNodo;
+            return;
+        }
+
+        Nodo* temp = testa;
+        while (temp->successivo) {
+            temp = temp->successivo;
+        }
+        temp->successivo = nuovoNodo;
+    }
+
+    void inserisciInPosizione(int valore, int posizione) {
+        Nodo* nuovoNodo = new Nodo();
+        nuovoNodo->valore = valore;
+
+        if (posizione == 0) {
+            nuovoNodo->successivo = testa;
+            testa = nuovoNodo;
+            return;
+        }
+
+        Nodo* temp = testa;
+        for (int i = 0; i < posizione - 1 && temp != NULL; i++) {
+            temp = temp->successivo;
+        }
+
+        if (temp == NULL) {
+            std::cerr << "Posizione fuori dai limiti" << std::endl;
+            delete nuovoNodo;
+            return;
+        }
+
+        nuovoNodo->successivo = temp->successivo;
+        temp->successivo = nuovoNodo;
+    }
+
+    void mostra() {
+        Nodo* temp = testa;
+        while (temp) {
+            std::cout << temp->valore << " -> ";
+            temp = temp->successivo;
+        }
+        std::cout << "nullptr" << std::endl;
+    }
+};
+
+int main() {
+    ListaCollegata lista;
+
+    // Inizializza la lista con i valori 1, 2, 3, 4, 5
+    for (int i = 1; i <= 5; i++) {
+        lista.inserisciInCoda(i);
+    }
+
+    std::cout << "Lista iniziale: ";
+    lista.mostra();
+
+    // Inserisci 77 a metà della lista
+    lista.inserisciInPosizione(77, 2); // Inserisci 77 in terza posizione (indice 2)
+
+    // Inserisci 8 nella lista
+    lista.inserisciInPosizione(8, 3); // Inserisci 8 in quarta posizione (indice 3)
+
+    std::cout << "Lista dopo le aggiunte: ";
+    lista.mostra();
+
+    return 0;
+}
