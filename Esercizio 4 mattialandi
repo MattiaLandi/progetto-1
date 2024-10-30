@@ -2,87 +2,96 @@
 using namespace std;
 
 struct Nodo {
-    int valore;
+    int val;
     Nodo* successivo;
 };
 
-class ListaCollegata {
-public:
-    Nodo* testa;
+// Funzione per inserire un nodo in coda
+void inserisciInCoda(Nodo*& testa, int val) {
+    Nodo* nuovoNodo = new Nodo();
+    nuovoNodo->val = val;
+    nuovoNodo->successivo = NULL;
 
-    ListaCollegata() : testa(NULL) {}
-
-    void inserisciInCoda(int valore) {
-        Nodo* nuovoNodo = new Nodo();
-        nuovoNodo->valore = valore;
-        nuovoNodo->successivo = NULL;
-
-        if (!testa) {
-            testa = nuovoNodo;
-            return;
-        }
-
-        Nodo* temp = testa;
-        while (temp->successivo) {
-            temp = temp->successivo;
-        }
-        temp->successivo = nuovoNodo;
+    if (!testa) {
+        testa = nuovoNodo;
+        return;
     }
 
-    void inserisciInPosizione(int valore, int posizione) {
-        Nodo* nuovoNodo = new Nodo();
-        nuovoNodo->valore = valore;
+    Nodo* temp = testa;
+    while (temp->successivo) {
+        temp = temp->successivo;
+    }
+    temp->successivo = nuovoNodo;
+}
 
-        if (posizione == 0) {
-            nuovoNodo->successivo = testa;
-            testa = nuovoNodo;
-            return;
-        }
+// Funzione per inserire un nodo in una posizione specifica
+void inserisciInPosizione(Nodo*& testa, int val, int posizione) {
+    Nodo* nuovoNodo = new Nodo();
+    nuovoNodo->val = val;
 
-        Nodo* temp = testa;
-        for (int i = 0; i < posizione - 1 && temp != NULL; i++) {
-            temp = temp->successivo;
-        }
-
-        if (temp == NULL) {
-            std::cerr << "Posizione fuori dai limiti" << std::endl;
-            delete nuovoNodo;
-            return;
-        }
-
-        nuovoNodo->successivo = temp->successivo;
-        temp->successivo = nuovoNodo;
+    if (posizione == 0) {
+        nuovoNodo->successivo = testa;
+        testa = nuovoNodo;
+        return;
     }
 
-    void mostra() {
-        Nodo* temp = testa;
-        while (temp) {
-            std::cout << temp->valore << " -> ";
-            temp = temp->successivo;
-        }
-        std::cout << "nullptr" << std::endl;
+    Nodo* temp = testa;
+    for (int i = 0; i < posizione - 1 && temp != NULL; i++) {
+        temp = temp->successivo;
     }
-};
+
+    if (temp == NULL) {
+        cerr << "Posizione fuori dai limiti" << endl;
+        delete nuovoNodo;
+        return;
+    }
+
+    nuovoNodo->successivo = temp->successivo;
+    temp->successivo = nuovoNodo;
+}
+
+// Funzione per mostrare la lista
+void mostra(Nodo* testa) {
+    Nodo* temp = testa;
+    while (temp) {
+        cout << temp->val << " -> ";
+        temp = temp->successivo;
+    }
+    cout << "nullptr" << endl;
+}
+
+// Funzione per liberare la memoria
+void liberaLista(Nodo*& testa) {
+    Nodo* temp;
+    while (testa) {
+        temp = testa;
+        testa = testa->successivo;
+        delete temp;
+    }
+}
 
 int main() {
-    ListaCollegata lista;
+    Nodo* lista = NULL;
 
-    // Inizializza la lista con i valori 1, 2, 3, 4, 5
+    // Inizializza  con i valori 1, 2, 3, 4, 5
     for (int i = 1; i <= 5; i++) {
-        lista.inserisciInCoda(i);
+        inserisciInCoda(lista, i);
     }
 
-    std::cout << "Lista iniziale: ";
-    lista.mostra();
+    cout << "Lista iniziale: ";
+    mostra(lista);
 
     // Inserisci 77 a metà della lista
-    lista.inserisciInPosizione(77, 2); // Inserisci 77 in terza posizione (indice 2)
+    inserisciInPosizione(lista, 77, 2); 
 
     // Inserisci 8 nella lista
-    lista.inserisciInPosizione(8, 3); // Inserisci 8 in quarta posizione (indice 3)
+    inserisciInPosizione(lista, 8, 3); 
 
-    std::cout << "Lista dopo le aggiunte: ";
-    lista.mostra();
+    cout << "Lista dopo le aggiunte: ";
+    mostra(lista);
+
+    // Libera la memoria
+    liberaLista(lista);
 
     return 0;
 }
