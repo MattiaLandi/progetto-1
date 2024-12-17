@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        int contatore = 0;  
+        int num = 2;   
+        int i;          
+
+      
+        while (contatore < 1000000000) {
+            int divisori = 0;  
+
+            
+            for (i = 2; i * i <= num; ++i) {
+                if (num % i == 0) {
+                    divisori++;  
+                     
+                }
+            }
+
+            
+            if (divisori == 0) {
+                System.out.print(num + " ");  
+                contatore++;  
+            }
+
+            num++;  
+        }
+
+        System.out.println();  
+    }
+}
